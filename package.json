@@ -1,0 +1,24 @@
+{
+  "name": "bmhs",
+  "version": "0.1.0",
+  "description": "Boyer–Moore–Horspool algorithm that works with Array & TypedArray",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chocobo1/bmhs.git"
+  },
+  "scripts": {
+    "test": "mocha --bail"
+  },
+  "author": "Mike Tzou (Chocobo1)",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "jsverify": "^0.8.4",
+    "mocha": "^5.2.0"
+  },
+  "keywords": [
+    "Boyer–Moore–Horspool",
+    "Horspool's algorithm",
+    "String-searching algorithm"
+  ]
+}
