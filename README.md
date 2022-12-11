@@ -59,7 +59,7 @@ npm test        # run tests
 ```
 
 ### References
-* http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/horsen.htm
+* https://www.inf.hs-flensburg.de/lang/algorithmen/pattern/horsen.htm
 * https://computing.dcu.ie/~humphrys/Notes/String/bm.html
 
 ### See also
