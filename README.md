@@ -13,7 +13,8 @@ npm install git+https://github.com/Chocobo1/bmhs.git
 
 ### Usage example
 ```javascript
-const Bmh = require('bmhs');  // import this module
+const Bmh = require('bmhs');  // import this module, CommonJS style
+//import * as Bmh from 'bmhs';  // import this module, ES module style
 
 // working with TypedArray
 {

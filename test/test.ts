@@ -1,13 +1,11 @@
-'use strict';
-
-const Assert = require('assert');
-const Bmh = require('../src/index.js');
-const Jsc = require('jsverify');
+import { strict as Assert } from 'node:assert';
+import * as Bmh from '../src/index';
+import * as Jsc from 'jsverify';
 
 describe("Unit tests", function() {
     describe("bmhs.generateSkipTable", function() {
         it("Boundary tests", function() {
-            const checkFinite = (val) => {
+            const checkFinite = (val: any) => {
                 const bmh = Bmh.BoyerMooreHorspool(val);
                 Assert(Object.keys(bmh.skipTable).length <= val.length);
             };
@@ -23,7 +21,7 @@ describe("Unit tests", function() {
     });
 
     describe("bmhs.match", function() {
-        const dataSet = [
+        const dataSet: any[] = [
             // [pattern, corpus, expectedIdx]
 
             // boundary
@@ -89,7 +87,7 @@ describe("Unit tests", function() {
         });
 
         it("Offset tests", function() {
-            const offsetDataSet = [
+            const offsetDataSet: any[] = [
                 // [pattern, corpus, offset, expectedIdx]
 
                 // boundary
