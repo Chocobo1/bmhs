@@ -170,3 +170,42 @@ describe("Property tests", function () {
         });
     });
 });
+
+describe("Example tests", function () {
+    it("Readme examples", function() {
+        // working with TypedArray
+        {
+            const pattern = Uint32Array.from([0xFFFF, 0x3000]);
+            const corpus = Uint32Array.from([0xFFFF, 0xFFFF, 0x3000, 0x1000]);
+
+            // setup `bmh` for later reuse
+            const bmh = Bmh.BoyerMooreHorspool(pattern);
+            // returns the first index of the exact match in `corpus`; -1 if not found
+            const idx = bmh.match(corpus);
+            if (idx !== 1)
+                throw (new Error('Please file an issue'));
+        }
+
+        // also working with String
+        {
+            const pattern = "pattern";
+            const corpus = "some pattern !@#$%";
+
+            const bmh = Bmh.BoyerMooreHorspool(pattern);
+            const idx = bmh.match(corpus);
+            if (idx !== corpus.indexOf(pattern))
+                throw (new Error('Please file an issue'));
+        }
+
+        // you can specify offset!
+        {
+            const pattern = "123";
+            const corpus = "123abc123";
+            const corpusOffset = 1;
+
+            const idx = Bmh.BoyerMooreHorspool(pattern).match(corpus, corpusOffset);
+            if (idx !== corpus.indexOf(pattern, corpusOffset))
+                throw (new Error('Please file an issue'));
+        }
+    });
+});
